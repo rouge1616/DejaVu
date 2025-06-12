@@ -3,7 +3,7 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 
 ## Description
 
-**DejaVu** is a surgical simulation framework built on the SOFA (Simulation Open Framework Architecture) platform. It enables high-fidelity, real-time simulation of patient-specific anatomies and surgical scenarios. Designed for researchers, clinicians, and educators, RealSim supports deformable tissue modeling, interactive tool dynamics, and integration with medical imaging data.
+**DejaVu** is a surgical simulation framework built on the SOFA (Simulation Open Framework Architecture) platform. It enables high-fidelity, real-time simulation of patient-specific anatomies and surgical scenarios. Designed for researchers, clinicians, and educators, it supports deformable tissue modeling, interactive tool dynamics, and integration with medical imaging data.
 
 - Real-time interaction and collision response  
 - Supports soft tissue cutting and deformation  
