@@ -24,7 +24,7 @@ The scenes are plugin-free and use SOFA core modules, so you should be good to g
 
 ## Citation
 
-If you use this software, please cite the following paper:
+If you use DejaVu in any capacity, please cite the following paper:
 
 **Haouchine, N., Stoyanov, D., Roy, F. and Cotin, S.**  
 Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 2017, Proceedings, Part II 20 (pp. 523-531).
