@@ -65,5 +65,5 @@ If you do not have SofaPython3, run the **.scn** file instead.
 </p>
 <p align="left">
   <img src="assets/eye.gif" width="45%" />
-  <img src="assets/eye-bis.png" width="45%" />
+  <img src="assets/eye-bis.png" width="40%" />
 </p>
