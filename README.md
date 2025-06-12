@@ -12,14 +12,14 @@ Official code and data for realistic intraoperative physics-based simulations fo
 
 It has also been successfully used for generating <u>training datasets</u> for deep learning models and as <u>ground-truth</u> to validate deformable registration, 3D reconstruction, and view synthesis methods, like NeRFs or Gaussian Splats.
 
-For more details, [read the paper](https://hal.science/hal-01542395/document) and [watch the Explainer Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
+For more details, [read the Paper](https://hal.science/hal-01542395/document) and [watch the Explainer Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
 
 
 
 ## Installation of SOFA
 
 To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
-The scenes are plugin-free and use SOFA core modules, so you should be good to go.
+The scenes are plugin-free and use SOFA core modules only, so you should be good to go.
 
 
 ## Citation
@@ -44,16 +44,16 @@ Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 201
 ---
 
 ## SOFA Scenes
-We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgery. Meshes, textures, and surgical images are provided. 
+We provide five SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgeries. Meshes, textures, and surgical images are provided. 
 
-Make sure you're in the SOFA build directory (or a directory where runSofa is executable) and that you have SOFA compiled with Python3 support (SofaPython3 plugin), then simply runSofa:
+To run the scenes, make sure you're in the SOFA build directory (or a directory where runSofa is executable) and that you have SOFA compiled with Python3 support (SofaPython3 plugin), then simply runSofa:
 
 ```bash
-./runSofa -g qglviewer scenes/liver/liver.py
+./runSofa -g qglviewer ./scenes/liver/liver.py
 ```
 
 You need "-g qglviewer" option to use the qglviewer camera parameters.
-If you do not have SofaPython3, run the .xml file instead.
+If you do not have SofaPython3, run the **.scn** file instead.
 
 <p align="left">
   <img src="assets/uterus1.gif" width="45%" />
