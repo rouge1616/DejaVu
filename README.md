@@ -10,9 +10,9 @@ Official code and data for realistic intraoperative physics-based simulations fo
 
 **DejaVu** is a surgical simulation tool for intra-operative gesture rehearsal based on the SOFA framework. It bridges pre-op simulation and intra-op augmented reality by using real-time physical modeling and intra-operative images to deliver visually accurate, interactive organ simulations for grasping, pulling, and cutting.
 
-It has also been successfully used for generating <u>training datasets</u> for deep learning models and as <u>ground-truth</u> to validate elastic registration or 3D reconstruction methods.
+It has also been successfully used for generating <u>training datasets</u> for deep learning models and as <u>ground-truth</u> to validate deformable registration, 3D reconstruction, and view synthesis methods, like NeRFs or Gaussian Splats.
 
-[Read the Paper](https://hal.science/hal-01542395/document)  and [Watch the Explainer Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
+For more details, [read the paper](https://hal.science/hal-01542395/document) and [watch the Explainer Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
 
 
 
