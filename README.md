@@ -19,7 +19,7 @@ For more details, [read the **Paper**](https://hal.science/hal-01542395/document
 ## Installation of SOFA
 
 To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
-The scenes are plugin-free and use SOFA core modules only, so you should be good to go.
+The scenes are plugin-free and use SOFA core modules only, so <u>binaries</u> should be enough.
 
 
 ## Citation
