@@ -1,5 +1,5 @@
-# DejaVu
-Code and data for realistic intraoperative physics-based simulations for surgery
+# DejaVu: Intra-operative simulation for surgical gesture rehearsal
+Official code and data for realistic intraoperative physics-based simulations for surgery
 
 ## Description
 
@@ -30,7 +30,7 @@ The scenes are plugin-free and use SOFA core modules, so you should be good to g
 If you use this software, please cite the following paper:
 
 **Haouchine, N., Stoyanov, D., Roy, F. and Cotin, S.**  
-*Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 2017, Proceedings, Part II 20 (pp. 523-531).
+Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 2017, Proceedings, Part II 20 (pp. 523-531).
 
 ### BibTeX
 
