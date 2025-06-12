@@ -1,5 +1,5 @@
 # DejaVu: Intra-operative simulation for surgical gesture rehearsal
-Official code and data for realistic intraoperative physics-based simulations for surgery
+Official code and data for realistic intraoperative physics-based simulations for surgery (based on the open-source [SOFA framework](https://www.sofa-framework.org/)) 
 
 <p align="center">
   <img src="assets/liver1.gif" width="45%" />
