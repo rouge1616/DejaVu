@@ -10,7 +10,7 @@ Official code and data for realistic intraoperative physics-based simulations fo
 
 **DejaVu** is a surgical simulation tool for intra-operative gesture rehearsal based on the SOFA framework. It bridges pre-op simulation and intra-op augmented reality by using real-time physical modeling and intra-operative images to deliver visually accurate, interactive organ simulations for grasping, pulling, and cutting.
 
-It has also been successfully used for generating <u>training datasets</u> for deep learning models and as <u>ground-truth</u> to validate deformable registration, 3D reconstruction, and view synthesis methods, like NeRFs or Gaussian Splats or for <u>force-feedback</u> estimation.
+It has also been successfully used for generating *training datasets* for deep learning models and as *ground-truth* to validate deformable registration, 3D reconstruction, and view synthesis methods, like NeRFs or Gaussian Splats or for *force-feedback* estimation.
 
 For more details, [read the **Paper**](https://hal.science/hal-01542395/document) and [watch the **Explainer Video**](https://www.youtube.com/watch?v=-UJYWlaTZr0)
 
@@ -19,7 +19,7 @@ For more details, [read the **Paper**](https://hal.science/hal-01542395/document
 ## Installation of SOFA
 
 To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
-The scenes are plugin-free and use SOFA core modules only, so <u>binaries</u> should be enough.
+The scenes are plugin-free and use SOFA core modules only, so *binaries* should be enough.
 
 
 ## Citation
