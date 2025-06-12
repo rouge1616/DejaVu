@@ -52,6 +52,8 @@ Make sure you're in the SOFA build directory (or a directory where runSofa exist
 ./runSofa liver/liver.py
 ```
 
+If you do not have SofaPython3, run the .xml file instead.
+
 <p align="left">
   <img src="assets/uterus1.gif" width="45%" />
   <img src="assets/uterus2.gif" width="46%" />
