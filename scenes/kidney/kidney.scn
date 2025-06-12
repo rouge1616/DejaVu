@@ -1,0 +1,74 @@
+<Node name="root" gravity="0 0 0" dt="0.01" animate="0">
+    <ViewerSetting resolution="1000 800"/>
+    <BackgroundSetting image="data/kidney-inpaint.png" />
+    <VisualStyle displayFlags="hideCollisionModels hideForceFields hideBehaviorModels hideWireframe"/>
+    <DefaultAnimationLoop />
+
+
+	<Node name="FEM">
+
+		<EulerImplicitSolver />
+	    <CGLinearSolver iterations="200" tolerance="1e-9" threshold="1e-9" />
+		<!--		
+		<SparseGrid name="volume" fileTopology="data/kidney_pig_surface_smooth.obj" n="12 8 12" />
+		-->
+		<MeshVTKLoader name="meshLoader" filename="data/kidney_pig_volume.vtu"/>
+		<TetrahedronSetTopologyContainer name="Container" src="@meshLoader"/>
+		<TetrahedronSetTopologyModifier name="Modifier"/>
+		<TetrahedronSetGeometryAlgorithms name="GeomAlgo"/>
+
+		<MechanicalObject template="Vec3d" name="MO"/>
+		<UniformMass totalMass="1" />	
+		<TetrahedronFEMForceField name="Corot" youngModulus="2000" poissonRatio="0.45" method="large" />
+
+		<BoxROI name="ROI1" box="20 40 -960 70 100 -950" drawBoxes="0"/>
+	        <FixedConstraint template="Vec3d" indices="@ROI1.indices" drawSize="0"/>
+
+		<BoxROI name="ROI2" box="40 40 -1040 100 100 -1030" drawBoxes="0"/>
+	        <FixedConstraint template="Vec3d" indices="@ROI2.indices" drawSize="0"/>
+
+		<BoxROI name="ROI3" box="80 80 -990 90 100 -980" drawBoxes="0"/>
+		<LinearForceField points="@ROI3.indices" 
+			forces="-1 0 0 1 0.5 0 -1 0.4 0.8 1 0.6 -0.8 -1 0 0" 
+			force="15000" times="0 0.5 1 1.5 2 2.5 3" arrowSizeCoef="0" 
+		/>
+
+		<Node name="VisualSurface" activated="1">
+			<OglModel name="VisualModel" fileMesh="data/kidney_pig_surface_smooth.obj"  putOnlyTexCoords="true" texturename="data/kidney-texture.png"
+			material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"  /> 
+		        <BarycentricMapping name="visual-mapping" input="@../MO" output="@VisualModel" />
+		</Node>
+		
+		<Node name="VisualVessels" activated="1">
+		        <VisualStyle displayFlags="showWireframe"/>
+			<OglModel name="VisualModel"fileMesh="data/kidney_pig_vessels_smooth.obj" color="0.2 0.2 0.8 0.35"/>	
+		        <BarycentricMapping name="visual-mapping" input="@../MO" output="@VisualModel" />
+		</Node>
+
+		<Node name="VisualToolBody" activated="1">
+		        <VisualStyle displayFlags="hideWireframe"/>
+			<OglModel name="VisualModel" fileMesh="data/dv_tool/body_uv.obj" scale3d="1 1 1" rotation="90 90 0" translation="85 95 -985" 				  					  putOnlyTexCoords="true" texturename="data/dv_tool/instru.png"
+				  material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+
+			<BarycentricMapping />
+		</Node>
+
+		<Node name="VisualToolClasper" activated="1">
+		        <VisualStyle displayFlags="hideWireframe"/>
+			<OglModel name="VisualModel" fileMesh="data/dv_tool/clasper1_uv.obj" scale3d="1 1 1" rotation="90 90 0" translation="85 95 -985" 					  
+				putOnlyTexCoords="true" texturename="data/dv_tool/instru_clasper.png"
+				  material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+
+			<BarycentricMapping />
+		</Node>
+
+		<Node name="VisualToolClasper" activated="1">
+		        <VisualStyle displayFlags="hideWireframe"/>
+			<OglModel name="VisualModel" fileMesh="data/dv_tool/clasper2_uv.obj" scale3d="1 1 1" rotation="90 90 0" translation="85 95 -985" 					  
+				putOnlyTexCoords="true" texturename="data/dv_tool/instru_clasper.png"
+				  material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+			<BarycentricMapping />
+		</Node>
+	
+	</Node>
+</Node>
