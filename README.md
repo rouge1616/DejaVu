@@ -15,15 +15,12 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 
 ![Software Overview](images/overview.png)
 
----
 
 ## Installation of SOFA
 
 To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
 
 The scenes are plugin-free and use SOFA core modules, so you should be good to go.
-
----
 
 
 ## Citation
@@ -52,19 +49,15 @@ arXiv preprint arXiv:2401.12345, 2024.
 ![Brain Deformation](gifs/brain_deform.gif)  
 Simulates intraoperative brain shift during tumor resection using patient-specific MRI-derived meshes and FEM-based deformation.
 
----
 
 ### 🔪 2. Liver Cutting  
 ![Liver Cutting](gifs/liver_cut.gif)  
 A soft tissue liver model that allows simulated surgical cutting with dynamic response and mesh splitting.
 
----
 
 ### 🪛 3. Tool-Tissue Interaction  
 ![Tool-Tissue Interaction](gifs/tool_tissue.gif)  
 Interactive manipulation of tissue using a virtual probe, with contact forces and tissue feedback.
-
----
 
 ### 🎯 4. Needle Insertion  
 ![Needle Insertion](gifs/needle_insertion.gif)  
