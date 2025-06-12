@@ -56,5 +56,5 @@ We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and ute
 </p>
 <p align="left">
   <img src="assets/eye.gif" width="45%" />
-  <img src="assets/brain.gif" width="45%" />
+  <img src="assets/brain.gif" width="47%" />
 </p>
