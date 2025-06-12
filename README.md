@@ -10,8 +10,8 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 - Integrates seamlessly with MRI/CT imaging  
 - Easily extensible with custom plugins and scenes  
 
-[Read the Paper](https://arxiv.org/abs/2401.12345)  
-[Watch the Video](https://youtu.be/demo-video-link)
+[Read the Paper](https://hal.science/hal-01542395/document)  
+[Watch the Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
 
 <p align="center">
   <img src="assets/liver1.gif" width="45%" />
@@ -22,7 +22,6 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 ## Installation of SOFA
 
 To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
-
 The scenes are plugin-free and use SOFA core modules, so you should be good to go.
 
 
@@ -30,18 +29,19 @@ The scenes are plugin-free and use SOFA core modules, so you should be good to g
 
 If you use this software, please cite the following paper:
 
-**Doe J., Smith A., Rouge N.**  
-*RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA*.  
-arXiv preprint arXiv:2401.12345, 2024.
+**Haouchine, N., Stoyanov, D., Roy, F. and Cotin, S.**  
+*Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 2017, Proceedings, Part II 20 (pp. 523-531).
 
 ### BibTeX
 
 ```bibtex
-@article{doe2024realsim,
-  title={RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA},
-  author={Doe, John and Smith, Alice and Rouge, Nazeem},
-  journal={arXiv preprint arXiv:2401.12345},
-  year={2024}
+@inproceedings{haouchine2017dejavu,
+  title={Dejavu: Intra-operative simulation for surgical gesture rehearsal},
+  author={Haouchine, Nazim and Stoyanov, Danail and Roy, Frederick and Cotin, Stephane},
+  booktitle={Medical Image Computing and Computer-Assisted Intervention- MICCAI 2017: 20th International Conference, Quebec City, QC, Canada, September 11-13, 2017, Proceedings, Part II 20},
+  pages={523--531},
+  year={2017},
+  organization={Springer}
 }
 ```
 ---
