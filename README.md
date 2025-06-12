@@ -12,7 +12,7 @@ Official code and data for realistic intraoperative physics-based simulations fo
 
 It has also been successfully used for generating <u>training datasets</u> for deep learning models and as <u>ground-truth</u> to validate deformable registration, 3D reconstruction, and view synthesis methods, like NeRFs or Gaussian Splats.
 
-For more details, [read the Paper](https://hal.science/hal-01542395/document) and [watch the Explainer Video](https://www.youtube.com/watch?v=-UJYWlaTZr0)
+For more details, [read the **Paper**](https://hal.science/hal-01542395/document) and [watch the **Explainer Video**](https://www.youtube.com/watch?v=-UJYWlaTZr0)
 
 
 
