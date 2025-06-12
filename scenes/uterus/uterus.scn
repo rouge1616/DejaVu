@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<Node name="root" gravity="0 0 0" dt="0.01" animate="0">
+    <ViewerSetting resolution="854 480"/>
+    <BackgroundSetting image="data/uterus-inpaint.png" />
+    <VisualStyle displayFlags="hideWireframe hideCollisionModels hideForceFields hideBehaviorModels"/>
+    <DefaultAnimationLoop />
+
+	<Node name="UTERUS">
+
+		<EulerImplicit />
+	    <CGLinearSolver iterations="200" tolerance="1e-9" threshold="1e-9" />
+		<SparseGrid name="volume" fileTopology="data/sphere_uv.obj" n="16 16 16" />
+		<MechanicalObject  template="Vec3d" name="gridDOFs" />
+		<UniformMass  totalMass="0.03" /> 
+		<TetrahedronFEMForceField name="Corot" youngModulus="2500" poissonRatio="0.35" method="large" />
+
+
+		<BoxROI name="ROI1" box="1 1 -0.2 -1 -1 -1" drawBoxes="0"/>
+	        <FixedConstraint template="Vec3d" indices="@ROIX1.indices" drawSize="0"/>
+
+		<BoxROI name="ROI2" box="1 1 1 0.5 -1 -1" drawBoxes="0"/>
+	        <FixedConstraint template="Vec3d" indices="@ROIX2.indices" drawSize="0"/>
+
+		<BoxROI name="ROI3" box="1 -0.5 1 -1 0.1 -1" drawBoxes="0"/>
+	        <FixedConstraint template="Vec3d" indices="@ROI3.indices" drawSize="0"/>
+
+		<BoxROI name="ROI4" box="0.5 0.7 0.5 -0.5 1.5 -0.5" drawBoxes="0"/>
+	        <LinearForceField points="@ROI4.indices" 
+			forces="0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 0" 
+			force="5" times="0 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6 1.8 2" arrowSizeCoef="0" 
+		/>
+
+
+
+		<Node name="VisualSurface" activated="1">
+			<OglModel name="VisualModel" fileMesh="data/sphere_uv.obj" putOnlyTexCoords="true" updateNormals="false"/>
+			<OglShader vertFilename="shaders/shaderLibrary.glsl" fragFilename="shaders/shaderLibrary.glsl"  />
+
+			<OglTexture id="DiffuseMap" textureFilename="data/uterus-pot.png" textureUnit="1" repeat="true" generateMipmaps="false" />
+			<OglShaderDefineMacro id="DiffuseMap_Present" />
+			<OglFloat3Variable id="LightPosition" value="-0.18 0 50" />
+			<OglFloat3Variable id="LightColor" value="0.1 0.1 0.1" />
+
+			<OglFloat3Variable id="DiffuseColor" value="1 1 1" />
+			<OglFloat3Variable id="AmbientColor" value="1 1 1" />
+
+			<OglFloat3Variable id="SpecularColor" value="1 1 1" />
+			<OglFloatVariable  id="SpecularRoughness" value="0.035" />
+	            	<OglFloatVariable  id="SpecularReflectance" value="0.04" />
+
+		        <BarycentricMapping name="visual-mapping" input="@../gridDOFs" output="@VisualModel" />
+		</Node>
+
+		<Node name="TumVisual" activated="1">
+            <OglModel name="VisualModel" filename="data/tumor.obj" translation="-8 0.7 -1.6" 
+			material="MAT Diffuse 1 0.7 0.7 0.7 1 Ambient 1 1 1 1 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 0 45"/>
+			<BarycentricMapping name="visual-mapping" input="@../gridDOFs" output="@VisualModel" />
+		</Node>
+
+
+	</Node>
+</Node>
