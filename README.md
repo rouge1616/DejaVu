@@ -48,11 +48,13 @@ We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and ute
 
 <p align="center">
   <img src="assets/uterus1.gif" width="45%" />
-  <img src="assets/uterus2.gif" width="45%" />
+  <img src="assets/uterus2.gif" width="46%" />
 </p>
-
-![Brain Deformation](assets/eye.gif)  
-![Brain Deformation](assets/kidney1.gif)  
-![Brain Deformation](assets/kidney2.gif)
-![Brain Deformation](assets/brain.gif)
-
+<p align="center">
+  <img src="assets/kidney1.gif" width="45%" />
+  <img src="assets/kidney2.gif" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/eye.gif" width="45%" />
+  <img src="assets/brain.gif" width="45%" />
+</p>
