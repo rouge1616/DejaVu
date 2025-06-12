@@ -56,7 +56,7 @@ If you do not have SofaPython3, run the .xml file instead.
 
 <p align="left">
   <img src="assets/uterus1.gif" width="45%" />
-  <img src="assets/uterus2.gif" width="46%" />
+  <img src="assets/uterus2.gif" width="45.5%" />
 </p>
 <p align="left">
   <img src="assets/kidney1.gif" width="45%" />
