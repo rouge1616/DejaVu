@@ -29,6 +29,27 @@ The scenes are plugin-free and use SOFA core modules.
 
 ---
 
+
+## Citation
+
+If you use this software, please cite the following paper:
+
+**Doe J., Smith A., Rouge N.**  
+*RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA*.  
+arXiv preprint arXiv:2401.12345, 2024.
+
+### BibTeX
+
+```bibtex
+@article{doe2024realsim,
+  title={RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA},
+  author={Doe, John and Smith, Alice and Rouge, Nazeem},
+  journal={arXiv preprint arXiv:2401.12345},
+  year={2024}
+}
+
+---
+
 ## Examples
 
 ### 🧠 1. Brain Deformation Simulation  
@@ -59,22 +80,3 @@ Demonstrates accurate needle trajectory modeling through multilayer tissue, incl
 ![Multimodal Viewer](gifs/multimodal_viewer.gif)  
 Visualizes and validates registration between simulated anatomy and imaging data (e.g., preop MRI and intraop ultrasound).
 
----
-
-## Citation
-
-If you use this software, please cite the following paper:
-
-**Doe J., Smith A., Rouge N.**  
-*RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA*.  
-arXiv preprint arXiv:2401.12345, 2024.
-
-### BibTeX
-
-```bibtex
-@article{doe2024realsim,
-  title={RealSim: Real-Time Biomechanical Simulation for Surgical Planning Using SOFA},
-  author={Doe, John and Smith, Alice and Rouge, Nazeem},
-  journal={arXiv preprint arXiv:2401.12345},
-  year={2024}
-}
