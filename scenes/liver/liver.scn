@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Node name="root" gravity="0 0 0" dt="0.005" animate="0">
+    <ViewerSetting resolution="960 540"/>
+    <!--<BackgroundSetting image="data/liver.png" />-->
+    <VisualStyle displayFlags="showCollisionModels hideForceFields hideBehaviorModels"/>
+    <DefaultAnimationLoop />
+
+	<Node name="LIVER">
+		<EulerImplicitSolver />
+	    <CGLinearSolver iterations="200" tolerance="1e-9" threshold="1e-9" />
+
+        <SparseGridTopology name="volume" fileTopology="data/parenchyma_001.obj" n="16 16 16"/>
+		<MechanicalObject  template="Vec3d" name="DOFs"/>
+		<UniformMass  totalMass="3" /> 
+		<TetrahedronFEMForceField name="Corot" youngModulus="800" poissonRatio="0.45" method="large" rayleighStiffness="0.5" />
+
+
+		<BoxROI name="ROI1" box="-0.10 0 -0.20 0.06 0.05 0.01" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI1.indices" drawSize="0"/>
+
+		<BoxROI name="ROI2" box="0 -0.10 -0.10 0.16 0.05 -0.05" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI2.indices" drawSize="0"/>
+
+		<BoxROI name="ROI3" box="0 -0.02 -0.05 0.16 0.02 -0.02" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI3.indices" drawSize="0"/>
+
+		<BoxROI name="ROI4" box="0.08 -0.04 0.05 0.10 -0.02 0.07" drawBoxes="0"/>
+		<LinearForceField points="@ROI4.indices" 
+			forces="0 0 1 0 0.5 -1 0 0 2 0 -1 0 0 0 0" 
+			force="0.2" times="0 1 2 3 4" arrowSizeCoef="0" 
+		/>
+
+
+		<Node name="LiverVisual" activated="1">
+			<OglModel name="Visual" filename="data/parenchyma_uv.obj" scale3d="0.01 0.01 0.01" putOnlyTexCoords="true"	texturename="data/liver.png"
+			material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 1 255 255 255 1 Shininess 1 45" />
+
+			<BarycentricMapping />
+
+		</Node>
+        
+        <Node name="Square" activated="1">
+			<OglModel name="Visual" filename="data/square_2594_triangles.obj" putOnlyTexCoords="true"	texturename="data/liver.png" 
+			material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 1 255 255 255 1 Shininess 1 45" 
+			scale3d="0.0354 0.02 0.02" rotation="10 -25 163" translation="0.235 0.005 -0.13"
+            />
+					
+		</Node>        
+
+		<Node name="VisualToolBody" activated="1">
+			<OglModel name="VM" fileMesh="data/dv_tool/body_uv.obj" scale3d="0.002 0.002 0.002" rotation="180 0 90" translation="0.09 -0.03 0.085" 
+				  putOnlyTexCoords="true" texturename="data/dv_tool/instru.png"
+				  material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+			<BarycentricMapping/>
+		</Node>
+
+		<Node name="VisualToolClasper" activated="1">
+		   <OglModel name="VM" fileMesh="data/dv_tool/clasper1_uv.obj" scale3d="0.002 0.002 0.002" rotation="180 0 90" translation="0.09 -0.03 0.085" 
+				putOnlyTexCoords="true" texturename="data/dv_tool/instru_clasper.png"
+				material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+
+			<BarycentricMapping />
+		</Node>
+
+		<Node name="VisualToolClasper" activated="1">
+		    <OglModel name="VM" fileMesh="data/dv_tool/clasper2_uv.obj"  scale3d="0.002 0.002 0.002" rotation="180 0 90" translation="0.09 -0.03 0.085" 					  
+				putOnlyTexCoords="true" texturename="data/dv_tool/instru_clasper.png"
+				material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45"/>
+
+			<BarycentricMapping />
+		</Node>
+        
+        <!--
+		<Node name="HVVisual" activated="1">
+			<VisualStyle displayFlags="showWireframe"/>
+			<OglModel name="Visual" filename="data/hepatic_vein.obj" scale3d="0.01 0.01 0.01"/>
+			<BarycentricMapping />
+		</Node>
+
+		<Node name="PVVisual" activated="1">
+			<VisualStyle displayFlags="showWireframe"/>
+			<OglModel name="Visual" filename="data/portal_vein.obj" scale3d="0.01 0.01 0.01"/>
+			<BarycentricMapping />
+		</Node>        
+        -->
+        
+	</Node>
+
+
+</Node>
