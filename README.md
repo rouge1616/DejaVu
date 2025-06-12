@@ -43,28 +43,13 @@ Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 201
 ```
 ---
 
-## Examples
-We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgery. Collisions and cutting are not supported at the moment. 
+## SOFA Scenes
+We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgery. Meshes, textures, and images are provided. 
 
-### 🧠 1. Brain Deformation Simulation  
 ![Brain Deformation](assets/eye.gif)  
-Simulates intraoperative brain shift during tumor resection using patient-specific MRI-derived meshes and FEM-based deformation.
-
-
-### 🔪 2. Liver Cutting  
-![Liver Cutting](gifs/liver_cut.gif)  
-A soft tissue liver model that allows simulated surgical cutting with dynamic response and mesh splitting.
-
-
-### 🪛 3. Tool-Tissue Interaction  
-![Tool-Tissue Interaction](gifs/tool_tissue.gif)  
-Interactive manipulation of tissue using a virtual probe, with contact forces and tissue feedback.
-
-### 🎯 4. Needle Insertion  
-![Needle Insertion](gifs/needle_insertion.gif)  
-Demonstrates accurate needle trajectory modeling through multilayer tissue, including puncture mechanics.
-
-### 📊 5. Multimodal Registration Viewer  
-![Multimodal Viewer](gifs/multimodal_viewer.gif)  
-Visualizes and validates registration between simulated anatomy and imaging data (e.g., preop MRI and intraop ultrasound).
+![Brain Deformation](assets/uterus1.gif)  
+![Brain Deformation](assets/uterus2.gif)  
+![Brain Deformation](assets/kidney1.gif)  
+![Brain Deformation](assets/kidney2.gif)
+![Brain Deformation](assets/brain.gif)
 
