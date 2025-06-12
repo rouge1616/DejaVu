@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Node name="root" gravity="0 0 0" dt="0.01" animate="0">
+    <ViewerSetting resolution="950 700"/>
+    <BackgroundSetting />
+    <VisualStyle displayFlags="hideCollisionModels hideForceFields hideBehaviorModels"/>
+
+    <DefaultAnimationLoop />
+    
+    <DefaultPipeline verbose="0" depth="10" draw="0" />
+    <BruteForceBroadPhase/>
+    <BVHNarrowPhase/>
+    <MinProximityIntersection name="Proximity" alarmDistance="0.1" contactDistance="0.1" />
+    <DefaultContactManager name="Response" response="PenalityContactForceField" />
+
+	<Node name="Brain">
+		<EulerImplicitSolver />
+	    <CGLinearSolver iterations="100" tolerance="1e-9" threshold="1e-9" />
+
+	    <SparseGridTopology name="volume" fileTopology="data/volume_simplified.obj" n="16 16 16"/>
+		<MechanicalObject  template="Vec3d" name="gridDOFs"/>
+		<UniformMass  totalMass="0.01" /> 
+		<TetrahedronFEMForceField name="Corot" youngModulus="20" poissonRatio="0.40" method="large" rayleighStiffness="0.05" />
+
+
+		<BoxROI name="ROI1" box="-70 -50 -60 50 50 -20" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI1.indices" drawSize="0"/>
+
+		<BoxROI name="ROI2" box="20 -50 -50 70 50 50" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI2.indices" drawSize="0"/>
+
+		<BoxROI name="ROI3" box="-70 30 -60 70 50 50" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI3.indices" drawSize="0"/>
+
+		<BoxROI name="ROI4" box="-70 -40 -60 70 -60 50" drawBoxes="0"/>
+	    <FixedConstraint template="Vec3d" indices="@ROI4.indices" drawSize="0"/>
+
+
+		<Node name="Visual" activated="1">
+			<MeshOBJLoader name="loader" filename="data/surface_full.obj"/>
+			<OglModel name="Visual" src="@loader" putOnlyTexCoords="true"	texturename="data/texture_outpaint.png"
+			material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 1 255 255 255 1 Emissive 1 255 255 255 1 Shininess 1 45" />
+			<BarycentricMapping />
+		</Node>
+	</Node> 
+        
+    <Node name="Skull">  
+    	<Node name="Visual" activated="1">
+			<MeshOBJLoader name="loader" filename="data/surface_skull.obj" scale3d="0.92 0.92 0.92" translation="-5 -2.5 7.5"/>
+			<OglModel src="@loader" putOnlyTexCoords="true"	texturename="data/texture.png" 
+			material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 1 255 255 255 1 Emissive 1 255 255 255 1 Shininess 1 45"			
+            />   
+		</Node>
+	</Node>
+	
+
+</Node>
