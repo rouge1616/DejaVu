@@ -19,13 +19,9 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 
 ## Installation of SOFA
 
-To install the SOFA framework, please use the official SOFA repository:
+To install the SOFA framework, follow the [official installation guide](https://www.sofa-framework.org/download/) for instructions tailored to your OS.
 
-🔗 [SOFA GitHub Repository](https://github.com/sofa-framework/sofa)
-
-Follow the [official installation guide](https://www.sofa-framework.org/community/doc/getting-started/) for instructions tailored to your operating system.
-
-The scenes are plugin-free and use SOFA core modules.
+The scenes are plugin-free and use SOFA core modules, so you should be good to go.
 
 ---
 
