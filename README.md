@@ -15,7 +15,7 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 
 <p align="center">
   <img src="assets/liver1.gif" width="45%" />
-  <img src="assets/liver2.gif" width="47%" />
+  <img src="assets/liver2.gif" width="46.5%" />
 </p>
 
 
