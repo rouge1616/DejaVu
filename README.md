@@ -47,7 +47,7 @@ Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 201
 We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgery. Collisions and cutting are not supported at the moment. 
 
 ### 🧠 1. Brain Deformation Simulation  
-![Brain Deformation](assets/brain.gif)  
+![Brain Deformation](assets/eye.gif)  
 Simulates intraoperative brain shift during tumor resection using patient-specific MRI-derived meshes and FEM-based deformation.
 
 
