@@ -46,6 +46,9 @@ Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 201
 ## SOFA Scenes
 We provide 5 SOFA scenes (XML and Python) for brain, liver, kidney, eye, and uterus surgery. Meshes, textures, and images are provided. 
 
+```bash
+./runSofa liver/liver.py
+
 <p align="left">
   <img src="assets/uterus1.gif" width="45%" />
   <img src="assets/uterus2.gif" width="46%" />
