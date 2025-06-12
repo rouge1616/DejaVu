@@ -47,7 +47,7 @@ arXiv preprint arXiv:2401.12345, 2024.
   journal={arXiv preprint arXiv:2401.12345},
   year={2024}
 }
-
+```
 ---
 
 ## Examples
@@ -73,8 +73,6 @@ Interactive manipulation of tissue using a virtual probe, with contact forces an
 ### 🎯 4. Needle Insertion  
 ![Needle Insertion](gifs/needle_insertion.gif)  
 Demonstrates accurate needle trajectory modeling through multilayer tissue, including puncture mechanics.
-
----
 
 ### 📊 5. Multimodal Registration Viewer  
 ![Multimodal Viewer](gifs/multimodal_viewer.gif)  
