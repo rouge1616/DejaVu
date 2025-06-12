@@ -15,6 +15,11 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 
 ![Software Overview](images/overview.png)
 
+<p align="center">
+  <img src="assets/liver1.gif" width="45%" />
+  <img src="assets/liver2.gif" width="45%" />
+</p>
+
 
 ## Installation of SOFA
 
