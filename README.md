@@ -10,14 +10,12 @@ Code and data for realistic intraoperative physics-based simulations for surgery
 - Integrates seamlessly with MRI/CT imaging  
 - Easily extensible with custom plugins and scenes  
 
-📄 [Read the Paper](https://arxiv.org/abs/2401.12345)  
-🎥 [Watch the Demo](https://youtu.be/demo-video-link)
-
-![Software Overview](images/overview.png)
+[Read the Paper](https://arxiv.org/abs/2401.12345)  
+[Watch the Video](https://youtu.be/demo-video-link)
 
 <p align="center">
   <img src="assets/liver1.gif" width="45%" />
-  <img src="assets/liver2.gif" width="45%" />
+  <img src="assets/liver2.gif" width="47%" />
 </p>
 
 
