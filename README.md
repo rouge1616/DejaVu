@@ -24,11 +24,13 @@ The scenes are plugin-free and use SOFA core modules only, so *binaries* should 
 
 ## Citation
 
-If you use DejaVu in any capacity, please cite the following paper:
+If you use DejaVu in any capacity, please cite the following papers:
 
 **Haouchine, N., Stoyanov, D., Roy, F. and Cotin, S.**  
 Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 2017, Proceedings, Part II 20 (pp. 523-531).
 
+**Haouchine, N., Roy, F., Courtecuisse, H., Nießner, M. and Cotin, S.** 
+Calipso: physics-based image and video editing through CAD model proxies. The Visual Computer, 36, 211-226. (2020).
 ### BibTeX
 
 ```bibtex
@@ -39,6 +41,16 @@ Dejavu: Intra-operative simulation for surgical gesture rehearsal. In MICCAI 201
   pages={523--531},
   year={2017},
   organization={Springer}
+}
+
+@article{haouchine2020calipso,
+  title={Calipso: physics-based image and video editing through CAD model proxies},
+  author={Haouchine, Nazim and Roy, Frederick and Courtecuisse, Hadrien and Nie{\ss}ner, Matthias and Cotin, Stephane},
+  journal={The Visual Computer},
+  volume={36},
+  pages={211--226},
+  year={2020},
+  publisher={Springer}
 }
 ```
 ---
