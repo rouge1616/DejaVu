@@ -1,9 +1,9 @@
 # DejaVu: Intra-operative simulation for surgical gesture rehearsal
 Official code and data for realistic intraoperative physics-based simulations for surgery (based on the open-source [SOFA framework](https://www.sofa-framework.org/)) 
 
+<br/>
 <p align="center">
-  <img src="assets/liver1.gif" width="45%" />
-  <img src="assets/liver2.gif" width="46.5%" />
+  <img src="assets/dejavu_short.gif" width="60%" />
 </p>
 
 ## Description
@@ -85,3 +85,8 @@ If you do not have SofaPython3, run the **.scn** file instead.
 <p align="left">
   <img src="assets/brain-bis.gif" width="75%" />
 </p>
+<p align="left">
+  <img src="assets/liver1.gif" width="45%" />
+  <img src="assets/liver2.gif" width="46.5%" />
+</p>
+
