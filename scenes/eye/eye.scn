@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<Node name="root" gravity="0 0 0" dt="0.02">
+    <BackgroundSetting image="data/eye-diffuse.png" />
+    <ViewerSetting resolution="1200 880"/>
+
+
+    <VisualStyle displayFlags="showVisualModels hideBehaviorModels hideCollisionModels hideMappings hideForceFields hideWireframe" />
+    <InteractiveCamera name="camera"/>
+
+	<Node name="Sclera" activated="1">
+		<Node name="Topology" >
+			<MeshVTKLoader name="inputB" filename="data/mesh/Sclera.vtk"/>        
+			<MeshTopology name="HexaTop" src="@inputB" />
+			<TetrahedronSetTopologyContainer name="Container" position="@HexaTop.position" />
+			<TetrahedronSetTopologyModifier name="Modifier"/>
+			<Hexa2TetraTopologicalMapping input="@HexaTop" output="@Container" swapping="true"/>
+		</Node>
+
+		<Node name="Physics">
+			<EulerImplicitSolver vdamping="2"/> 
+			<CGLinearSolver iterations="20" tolerance="1e-5" threshold="1e-5" />
+			<!-- <PCGLinearSolver preconditioners="precond" iterations="12" tolerance="1e-5" /> -->
+			<!-- <SparseLDLSolver name="precond" template="AsyncCompressedRowSparseMatrix3f" /> -->
+			<!-- <SparseLDLSolver name="precond" />-->
+			<TetrahedronSetTopologyContainer name="HexaContainer" src="@../Topology/Container"/>
+
+			<MechanicalObject template="Vec3d" name="DOFs"/>
+			<TetrahedronFEMForceField name="FEM" youngModulus="25000" poissonRatio="0.45" />
+			<UniformMass name="mass" totalMass="7.0" />
+
+			<BoxROI name="Muscles" box="-12 -6 -1  -8 3 6
+						11 -6 -1  15 3 6
+						-3 7 -1  6 13 6
+						-3 -16 -1  6 -10 6" 
+						drawBoxes="False" drawSize="3"/>
+
+			<BoxROI name="Muscleback" box="-2 -3 -11  2 3 -7"/>
+
+			<RestShapeSpringsForceField name="MuscleRSFF" 
+				stiffness="5e4"
+				angularStiffness="1e3" 
+				external_rest_shape="@DOFs"
+				external_points="@Muscles.indices"
+				points ="@Muscles.indices"
+				drawSpring="1"
+			/>
+
+			<PartialFixedConstraint template="Vec3d" indices="@Muscleback.indices" drawSize="0" fixedDirections="1 1 1"/>
+		
+					
+			<!-- MUSCLE SPING PLUGIN NOT AVAILABLE -->
+			<!--
+			<MuscleSpringForceField name="sutureForceField" indices="@Muscles.indices" interpolationMode="3" PieceWiseDeformation="0 2 7" PieceWiseStiffness="50 400 1e5"/>
+			<MuscleSpringForceField name="sutureForceField" indices="@Muscleback.indices" interpolationMode="1" PieceWiseDeformation="0" PieceWiseStiffness="1e5"/>
+			-->
+
+			<Node name="Visual" >
+				<Node name="cornea" activated="1">
+					<OglModel name="VisualModel" fileMesh="data/objects/cornea_uv_clean.obj" useNormals="true" putOnlyTexCoords="true" />
+					<OglShader vertFilename="shaders/shaderLibrary.glsl" fragFilename="shaders/shaderLibrary.glsl"  />
+					<OglTexture id="DiffuseMap" textureFilename="data/eye-diffuse-smudge.png" textureUnit="1" repeat="true" generateMipmaps="false" />
+					<OglShaderDefineMacro id="DiffuseMap_Present" />
+					<OglFloat3Variable id="LightPosition" value="0 0 500" />
+					<OglFloat3Variable id="LightColor" value="1 1 1" />
+					<OglFloat3Variable id="DiffuseColor" value="1 1 1" />
+					<OglFloat3Variable id="AmbientColor" value="0.2 0.2 0.2" />
+					<OglFloat3Variable id="SpecularColor" value="1 1 1" />
+					<OglFloatVariable  name="SpecularRoughness" value="0.04" />
+					<OglFloatVariable  name="SpecularReflectance" value="0.04" />
+
+					<BarycentricMapping />
+				</Node>
+
+			    	<Node name="Sclera" activated="0">
+					<OglModel name="VisualModel" fileMesh="data/objects/r_sclera_uv.obj"  />
+					<BarycentricMapping />
+			    	</Node>
+			 
+			    	<Node name="Conjunctiva" activated="1">
+			        	<OglModel name="Visual" filename="data/objects/r_conjunctiva_uv_trim.obj" putOnlyTexCoords="true"	texturename="data/eye-diffuse-smudge.png"
+						material="MAT Diffuse 1 255 255 255 1 Ambient 1 255 255 255 1 Specular 0 255 255 255 1 Emissive 0 1 1 1 1 Shininess 1 45" />
+			        	<BarycentricMapping />
+			    	</Node>
+
+				<Node name="Trocars1">
+				    	<Node name="Trocar1p1" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part1.obj" translation="10 2 5.7" rotation="0 30 0"/>
+						<BarycentricMapping />
+				    	</Node>
+				    	<Node name="Trocar1p2" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part2.obj" translation="10 2 5.7" rotation="0 30 0"/>
+						<BarycentricMapping />
+				    	</Node>
+			    	</Node>
+				<Node name="Trocars2">
+				    	<Node name="Trocar2p1" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part1.obj" translation="8 -4 7.2" rotation="0 30 0"/>
+						<BarycentricMapping />
+				    	</Node>
+				    	<Node name="Trocar2p2" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part2.obj" translation="8 -4 7.2" rotation="0 30 0"/>
+						<BarycentricMapping />
+				    	</Node>
+			    	</Node>
+				<Node name="Trocars3">
+				    	<Node name="Trocar3p1" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part1.obj" translation="-8 2 5.5" rotation="0 -25 0"/>
+						<BarycentricMapping />
+				    	</Node>
+				    	<Node name="Trocar3p2" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part2.obj" translation="-8 2 5.5" rotation="0 -25 0"/>
+						<BarycentricMapping />
+				    	</Node>
+			    	</Node>
+				<Node name="Trocars4">
+				    	<Node name="Trocar4p1" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part1.obj" translation="-6 -4 6.5" rotation="0 -40 0"/>
+						<BarycentricMapping />
+				    	</Node>
+				    	<Node name="Trocar4p2" activated="1">
+						<OglModel name="Visual" filename="data/trocars/trocar_part2.obj" translation="-6 -4 6.5" rotation="0 -40 0"/>
+						<BarycentricMapping />
+				    	</Node>
+			    	</Node>
+
+			</Node>
+		</Node>
+	</Node>
+
+</Node>
